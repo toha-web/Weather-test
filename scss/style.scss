@@ -1,0 +1,217 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700&display=swap);
+
+@mixin font1{
+    font-family: 'Manrope';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1;
+    color: #FFFFFF;
+}
+@mixin font2{
+    @include font1;
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.wrapper{
+    width: 1920px;
+    height: 1080px;
+    box-sizing: border-box;
+    padding: 60px 80px;
+    background-color: #004b90;
+    background-image: url(../img/Group.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+.weather{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+.weather_title{
+    height: 254px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title_date{
+    @include font1;
+    font-size: 50px;
+}
+.title_city{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.weather_info{
+    height: 696px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    & > div{
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+.info_total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 100px;
+    box-sizing: border-box;
+}
+.total_data{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 60px;
+}
+.total_data_icon{
+    width: 271px;
+    height: 183px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.total_data_temp{
+    text-align: center;
+    flex-grow: 1;
+    .temp_hi{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        @include font1;
+        font-size: 140px;
+        div{
+            flex-grow: 1;
+        }
+        img{
+            height: 100px;
+            transform: rotate(180deg)
+        }
+    }
+    .temp_low{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        @include font1;
+        font-size: 110px;
+        div{
+            flex-grow: 1;
+        }
+        img{
+            height: 80px;
+        }
+    }
+}
+.total_description{
+    @include font2;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 120px;
+}
+.info_detail{
+    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.detail_logo{
+    width: 160px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 75%;
+        height: 75%;
+        object-fit: fill;
+    }
+}
+.detail_title{
+    @include font2;
+}
+.detail_temp{
+    @include font2;
+    font-size: 80px;
+}
+.detail_wind{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    .icon{
+        width: 50px;
+        height: 50px;
+        border: 3px solid #FFFFFF;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 50%;
+            height: 50%;
+        }
+    }
+    .data{
+        @include font1;
+        font-size: 35px;
+    }
+}
+.detail_rain-chance, .detail_rainfall{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    .icon{
+        width: 40px;
+        height: 40px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .data{
+        @include font1;
+        font-size: 35px;
+    }
+}
+.detail_rain-chance{
+    margin: 20px auto -10px;
+}
